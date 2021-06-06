@@ -32,11 +32,7 @@ class _ProfileState extends State<Profile> {
       ),
       body: Column(
         children: [
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text("Back"))
+          user(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
@@ -65,4 +61,47 @@ class _ProfileState extends State<Profile> {
       ),
     );
   }
+}
+
+Widget user() {
+  return ListTile(
+    leading: Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/aav.png'),
+        ),
+      ),
+    ),
+    title: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Text(
+          "User",
+          style: TextStyle(
+              color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Text(
+          "abc@gmail.com",
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    ),
+    subtitle: Column(
+      children: [
+        Text(
+          "Logout",
+          style: TextStyle(
+            color: Colors.purple,
+            fontSize: 10,
+          ),
+        ),
+      ],
+    ),
+  );
 }
